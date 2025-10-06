@@ -1,7 +1,8 @@
 from enum import Enum
 
+# Enumaration for the differnet text types
 class TextType(Enum):
-    PLAIN = "plain"
+    TEXT = "text"
     BOLD = "bold"
     ITALIC = "italic"
     CODE = "code"
@@ -14,6 +15,7 @@ class TextNode:
         self.text_type = text_type
         self.url = url
 
+    # Equality check for testing purposes
     def __eq__(self, other):
         if not isinstance(other, TextNode):
             return False
@@ -23,5 +25,6 @@ class TextNode:
             self.url == other.url
         )
 
+    # String representation for debugging
     def __repr__(self):
         return f"TextNode({self.text}, {self.text_type.value}, {self.url})"
